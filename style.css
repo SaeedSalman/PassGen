@@ -1,0 +1,119 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding-top: 60px; /* Space for the nav bar */
+    box-sizing: border-box;
+}
+
+.container {
+    text-align: center;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    margin-top: 80px; /* Increase margin-top to accommodate fixed nav */
+    width: 400px; 
+}
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+button, .copy-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+    box-sizing: border-box; 
+}
+
+button:hover, .copy-button:hover {
+    background-color: #45a049;
+}
+
+.passphrase-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+#passphraseOutput {
+    font-size: 18px;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    margin-right: 10px;
+    flex-grow: 1;
+}
+
+.copy-button {
+    background-color: transparent; /* Blue */
+    padding: 10px 15px;
+}
+
+
+nav {
+    background-color: #34495e; 
+    padding: 22px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+nav a {
+    color: #f8f8f8; 
+    text-decoration: none;
+    font-size: 18px; 
+    padding: 8px 16px;
+    margin: 0 10px; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover, nav a:active {
+    background-color: #4b6b8a; 
+    color: #ffffff;
+    border-radius: 3px; 
+}
+
+.container {
+    margin-top: 20px; 
+
+}
+
+.download-container {
+    text-align: center;
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+}
+
+.download-container button {
+    background-color: #e67e22; 
+    color: white;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.download-container button:hover {
+    background-color: #d35400;
+}
