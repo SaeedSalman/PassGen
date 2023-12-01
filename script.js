@@ -1,7 +1,3 @@
-function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
 function generateSingleSpecialPassphrase() {
     const descriptiveWords = ["bright", "swift", "grand", "noble", "kind", "brave"];
     const objectWords = ["eagle", "comet", "flower", "piano", "robot", "castle"];
@@ -9,14 +5,11 @@ function generateSingleSpecialPassphrase() {
     let descriptiveWord = descriptiveWords[Math.floor(Math.random() * descriptiveWords.length)];
     let objectWord = objectWords[Math.floor(Math.random() * objectWords.length)];
 
-    // Capitalize the first letter of the descriptive word
-    descriptiveWord = capitalizeFirstLetter(descriptiveWord);
-
     let passphrase = descriptiveWord + objectWord;
 
     // Ensure the combined length of words is at least 10 characters
     while (passphrase.length < 10) {
-        descriptiveWord = capitalizeFirstLetter(descriptiveWords[Math.floor(Math.random() * descriptiveWords.length)]);
+        descriptiveWord = descriptiveWords[Math.floor(Math.random() * descriptiveWords.length)];
         objectWord = objectWords[Math.floor(Math.random() * objectWords.length)];
         passphrase = descriptiveWord + objectWord;
     }
