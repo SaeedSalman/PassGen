@@ -1,24 +1,34 @@
-// script.js
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
-function generateSingleSpecialPassphrase(numWords = 3) {
-    const shorterWords = ["cat", "sun", "moon", "fish", "car", "ball", "star", "sky"];
-    let selectedWords = [];
-    while (selectedWords.length < numWords) {
-        let word = shorterWords[Math.floor(Math.random() * shorterWords.length)];
-        if (!selectedWords.includes(word)) {
-            selectedWords.push(word);
-        }
+function generateSingleSpecialPassphrase() {
+    const descriptiveWords = ["bright", "swift", "grand", "noble", "kind", "brave"];
+    const objectWords = ["eagle", "comet", "flower", "piano", "robot", "castle"];
+
+    let descriptiveWord = descriptiveWords[Math.floor(Math.random() * descriptiveWords.length)];
+    let objectWord = objectWords[Math.floor(Math.random() * objectWords.length)];
+
+    // Capitalize the first letter of the descriptive word
+    descriptiveWord = capitalizeFirstLetter(descriptiveWord);
+
+    let passphrase = descriptiveWord + objectWord;
+
+    // Ensure the combined length of words is at least 10 characters
+    while (passphrase.length < 10) {
+        descriptiveWord = capitalizeFirstLetter(descriptiveWords[Math.floor(Math.random() * descriptiveWords.length)]);
+        objectWord = objectWords[Math.floor(Math.random() * objectWords.length)];
+        passphrase = descriptiveWord + objectWord;
     }
 
-    let passphrase = selectedWords.join('');
-    const specialChars = "$?&@!";
-    passphrase += specialChars[Math.floor(Math.random() * specialChars.length)];
-    
-    while (passphrase.length < 14) {
+    // Append a period and numbers
+    passphrase += '.';
+    let numDigitsRequired = 14 - passphrase.length;
+    for (let i = 0; i < numDigitsRequired; i++) {
         passphrase += Math.floor(Math.random() * 10).toString();
     }
 
-    return passphrase.charAt(0).toUpperCase() + passphrase.slice(1);
+    return passphrase;
 }
 
 function generateAndShowPassphrase() {
@@ -29,4 +39,3 @@ function copyPassphrase() {
     const passphrase = document.getElementById("passphraseOutput").innerText;
     navigator.clipboard.writeText(passphrase);
 }
-

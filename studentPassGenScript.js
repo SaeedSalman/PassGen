@@ -8,7 +8,7 @@ function generateSingleSpecialPassphrase() {
     let color = colors[Math.floor(Math.random() * colors.length)];
 
     let coloredWord = color + word; 
-    const specialChars = "$?&@!";
+    const specialChars = ".";
     coloredWord += specialChars[Math.floor(Math.random() * specialChars.length)];
 
     coloredWord += Math.floor(Math.random() * 10).toString();
