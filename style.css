@@ -6,7 +6,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    padding-top: 60px; /* Space for the nav bar */
+    padding-top: 60px; 
     box-sizing: border-box;
 }
 
@@ -17,7 +17,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     width: 350px;
-    margin-top: 80px; /* Increase margin-top to accommodate fixed nav */
+    margin-top: 80px; 
     width: 400px; 
 }
 h2 {
@@ -39,6 +39,11 @@ button, .copy-button {
 
 button:hover, .copy-button:hover {
     background-color: #45a049;
+}
+
+button:active {
+    transform: scale(0.98); 
+    opacity: 0.8; 
 }
 
 .passphrase-container {
